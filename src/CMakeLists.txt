@@ -16,7 +16,7 @@ add_library(zlog
 target_link_libraries(zlog
     ${CMAKE_THREAD_PREFER_PTHREAD}
     )
-target_include_directories(zlog PUBLIC $<INSTALL_INTERFACE:include>)
+target_include_directories(zlog PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}> $<INSTALL_INTERFACE:include>)
 
 if (WIN32)
     target_link_libraries(zlog
